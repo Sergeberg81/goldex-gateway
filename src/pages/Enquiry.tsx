@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, ArrowLeft } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowLeft, MessageCircle } from "lucide-react";
+import wechatQR from "@/assets/wechat-qr.png";
+import whatsappQR from "@/assets/whatsapp-qr.png";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
@@ -112,7 +114,7 @@ const Enquiry = () => {
                       <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-semibold mb-2">Email Us</h3>
-                        <p className="text-sm text-muted-foreground mb-1">info@spimex.com</p>
+                        <p className="text-sm text-muted-foreground mb-1">info@goldexspimex.ru</p>
                         <p className="text-sm text-muted-foreground">For verification and inquiries</p>
                       </div>
                     </div>
@@ -151,6 +153,23 @@ const Enquiry = () => {
                       <li>• Transparent exchange-based pricing</li>
                       <li>• Comprehensive trading services</li>
                     </ul>
+                  </Card>
+
+                  <Card className="p-6">
+                    <h3 className="font-semibold mb-4 flex items-center gap-2">
+                      <MessageCircle className="w-5 h-5 text-primary" />
+                      Connect With Us
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <img src={wechatQR} alt="WeChat QR Code" className="w-full max-w-[160px] mx-auto mb-2 rounded-lg" />
+                        <p className="text-sm text-muted-foreground">WeChat</p>
+                      </div>
+                      <div className="text-center">
+                        <img src={whatsappQR} alt="WhatsApp QR Code" className="w-full max-w-[160px] mx-auto mb-2 rounded-lg" />
+                        <p className="text-sm text-muted-foreground">WhatsApp</p>
+                      </div>
+                    </div>
                   </Card>
                 </div>
               </div>
