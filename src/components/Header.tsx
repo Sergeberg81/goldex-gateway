@@ -10,7 +10,8 @@ const Header = () => {
           <div className="flex items-center gap-3 md:gap-4">
             <img src={goldexLogo} alt="GOLDEX" className="h-16 md:h-20" />
           </div>
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <div className="flex items-center gap-4 xl:gap-6">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               About
             </a>
@@ -23,10 +24,12 @@ const Header = () => {
             <a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Services
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
-          </nav>
+              <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact
+              </a>
+            </nav>
+            <img src={spimexLogo} alt="SPIMEX" className="h-16 md:h-20" />
+          </div>
         </div>
       </div>
     </header>
