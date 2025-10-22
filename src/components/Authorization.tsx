@@ -10,8 +10,8 @@ const Authorization = () => {
             <Shield className="w-4 h-4 text-primary" />
             <span className="text-sm text-primary">Official Authorization</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Authorized SPIMEX Partner
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            Authorized by SPIMEX
           </h2>
           <p className="text-lg text-muted-foreground">
             GOLDEX executives are officially authorized by the St. Petersburg International 
@@ -38,7 +38,7 @@ const Authorization = () => {
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm">Partnership with state mint Goznak for custodial services</span>
+                <span className="text-sm">Partnership with state mint GOZNAK for custodial services</span>
               </div>
             </div>
           </Card>

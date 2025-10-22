@@ -54,14 +54,6 @@ const CallToAction = () => {
                 <p className="text-sm text-muted-foreground">For verification and inquiries</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold mb-1">Authorized Representatives</h4>
-                <p className="text-sm text-muted-foreground">Sergei Popov</p>
-                <p className="text-sm text-muted-foreground">Dmitry Pluschevsky</p>
-              </div>
-            </div>
           </div>
         </Card>
       </div>

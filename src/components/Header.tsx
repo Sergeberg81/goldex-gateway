@@ -18,6 +18,9 @@ const Header = () => {
               <a href="#authorization" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Authorization
               </a>
+              <a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Services
+              </a>
               <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </a>
