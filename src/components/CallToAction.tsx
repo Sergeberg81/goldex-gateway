@@ -45,41 +45,24 @@ const CallToAction = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-border">
+          <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-border">
             <div className="flex items-start gap-4">
               <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold mb-1">Email Us</h4>
+                <h4 className="font-semibold mb-2">Email Us</h4>
                 <p className="text-sm text-muted-foreground">info@goldexspimex.ru</p>
                 <p className="text-xs text-muted-foreground mt-1">For verification and inquiries</p>
               </div>
             </div>
             
-            <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold mb-1">SPIMEX</h4>
-                <p className="text-sm text-muted-foreground">St. Petersburg, Russia</p>
-                <p className="text-sm text-muted-foreground">Bolshaya Konyushennaya St., 21/23</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold mb-1">Phone</h4>
-                <p className="text-sm text-muted-foreground">+7 (812) 309-33-33</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <Globe className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold mb-1">Website</h4>
-                <a href="https://www.spimex.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-                  www.spimex.com
-                </a>
-              </div>
+            <div className="space-y-2">
+              <h4 className="font-semibold mb-3">SPIMEX</h4>
+              <p className="text-sm text-muted-foreground">St. Petersburg, Russia</p>
+              <p className="text-sm text-muted-foreground">Bolshaya Konyushennaya St., 21/23</p>
+              <p className="text-sm text-muted-foreground">+7 (812) 309-33-33</p>
+              <a href="https://www.spimex.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline inline-block">
+                www.spimex.com
+              </a>
             </div>
           </div>
         </Card>
