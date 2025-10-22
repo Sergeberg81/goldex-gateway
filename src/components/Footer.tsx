@@ -1,4 +1,5 @@
-import goldexLogo from "@/assets/goldex-logo.png";
+import goldexLogo from "@/assets/goldex-logo-new.jpg";
+import spimexLogo from "@/assets/spimex-logo.jpg";
 
 const Footer = () => {
   return (
@@ -6,7 +7,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2">
-            <img src={goldexLogo} alt="GOLDEX" className="h-10 mb-4" />
+            <div className="flex items-center gap-4 mb-4">
+              <img src={goldexLogo} alt="GOLDEX" className="h-10" />
+              <div className="h-8 w-px bg-border" />
+              <img src={spimexLogo} alt="SPIMEX" className="h-10" />
+            </div>
             <p className="text-sm text-muted-foreground mb-4">
               GOLDEX JSC - Official authorized partner of SPIMEX for promoting and developing 
               the Gold Exchange Trading platform.

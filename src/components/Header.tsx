@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import goldexLogo from "@/assets/goldex-logo.png";
+import goldexLogo from "@/assets/goldex-logo-new.jpg";
+import spimexLogo from "@/assets/spimex-logo.jpg";
 
 const Header = () => {
   return (
@@ -7,7 +8,11 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <img src={goldexLogo} alt="GOLDEX" className="h-10" />
+            <div className="flex items-center gap-4">
+              <img src={goldexLogo} alt="GOLDEX" className="h-10" />
+              <div className="h-8 w-px bg-border" />
+              <img src={spimexLogo} alt="SPIMEX" className="h-10" />
+            </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 About
