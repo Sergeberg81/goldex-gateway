@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { Resend } from "https://esm.sh/resend@4.0.0";
 
-const SENDGRID_API_KEY = Deno.env.get("SENDGRID_API_KEY");
-const SENDGRID_API_URL = "https://api.sendgrid.com/v3/mail/send";
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -47,36 +47,17 @@ const handler = async (req: Request): Promise<Response> => {
         <p>User has requested to be contacted.</p>
       `;
 
-    const sendgridPayload = {
-      personalizations: [
-        {
-          to: [{ email: "info@goldexspimex.ru" }],
-          subject: emailSubject,
-        },
-      ],
-      from: { email: "noreply@goldexspimex.ru", name: "GOLDEX Website" },
-      reply_to: { email: email, name: name },
-      content: [
-        {
-          type: "text/html",
-          value: emailBody,
-        },
-      ],
-    };
-
-    const response = await fetch(SENDGRID_API_URL, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${SENDGRID_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(sendgridPayload),
+    const { error } = await resend.emails.send({
+      from: "GOLDEX Website <onboarding@resend.dev>",
+      to: ["info@goldexspimex.ru"],
+      subject: emailSubject,
+      replyTo: email,
+      html: emailBody,
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("SendGrid error:", errorText);
-      throw new Error(`SendGrid API error: ${response.status}`);
+    if (error) {
+      console.error("Resend error:", error);
+      throw new Error(`Resend API error: ${error.message}`);
     }
 
     console.log("Email sent successfully");
