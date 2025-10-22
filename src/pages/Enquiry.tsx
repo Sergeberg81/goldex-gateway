@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Phone, MapPin, ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import wechatQR from "@/assets/wechat-qr.png";
 import whatsappQR from "@/assets/whatsapp-qr.png";
 import { Link } from "react-router-dom";
@@ -109,31 +109,6 @@ const Enquiry = () => {
                 </Card>
 
                 <div className="space-y-6">
-                  <Card className="p-6">
-                    <div className="flex items-start gap-4">
-                      <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold mb-2">Call Us</h3>
-                        <p className="text-sm text-muted-foreground">Available Monday-Friday</p>
-                        <p className="text-sm text-muted-foreground">9:00 AM - 6:00 PM MSK</p>
-                      </div>
-                    </div>
-                  </Card>
-
-                  <Card className="p-6">
-                    <div className="flex items-start gap-4">
-                      <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold mb-2">SPIMEX Location</h3>
-                        <p className="text-sm text-muted-foreground">
-                          St. Petersburg International<br />
-                          Mercantile Exchange<br />
-                          Russian Federation
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-
                   <Card className="p-6 bg-primary/5 border-primary/20">
                     <h3 className="font-semibold mb-3">Why Choose GOLDEX?</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
