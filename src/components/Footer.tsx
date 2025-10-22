@@ -31,6 +31,14 @@ const Footer = () => {
           </div>
           
           <div>
+            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>Email: <a href="mailto:info@goldexspimex.ru" className="hover:text-primary transition-colors">info@goldexspimex.ru</a></li>
+              <li className="text-xs mt-3">For verification and inquiries</li>
+            </ul>
+          </div>
+          
+          <div>
             <h4 className="font-semibold mb-4">SPIMEX</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>St. Petersburg, Russia</li>
