@@ -1,16 +1,15 @@
-import goldexLogo from "@/assets/goldex-logo-new.jpg";
+import goldexLogo from "@/assets/goldex-logo-dark.png";
 import spimexLogo from "@/assets/spimex-logo.jpg";
 
 const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t border-border py-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-2">
-            <div className="flex items-center gap-4 mb-4">
-              <img src={goldexLogo} alt="GOLDEX" className="h-10" />
-              <div className="h-8 w-px bg-border" />
-              <img src={spimexLogo} alt="SPIMEX" className="h-10" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src={goldexLogo} alt="GOLDEX" className="h-12" />
+              <img src={spimexLogo} alt="SPIMEX" className="h-12" />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               GOLDEX JSC - Official authorized partner of SPIMEX for promoting and developing 
