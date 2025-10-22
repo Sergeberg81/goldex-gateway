@@ -48,7 +48,7 @@ const handler = async (req: Request): Promise<Response> => {
       `;
 
     const { error } = await resend.emails.send({
-      from: "GOLDEX Website <onboarding@resend.dev>",
+      from: "GOLDEX Website <noreply@goldexspimex.ru>",
       to: ["info@goldexspimex.ru"],
       subject: emailSubject,
       replyTo: email,
