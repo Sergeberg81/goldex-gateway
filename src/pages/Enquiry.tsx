@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
 
 const Enquiry = () => {
   const { toast } = useToast();
@@ -21,13 +22,37 @@ const Enquiry = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Enquiry Submitted",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          ...formData,
+          type: "enquiry",
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Enquiry Submitted",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting enquiry:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit enquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -102,8 +127,8 @@ const Enquiry = () => {
                         className="min-h-[120px]"
                       />
                     </div>
-                    <Button type="submit" className="w-full">
-                      Submit Enquiry
+                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Submit Enquiry"}
                     </Button>
                   </form>
                 </Card>

@@ -1,10 +1,52 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Mail, MapPin, Phone, Globe } from "lucide-react";
 import securityBg from "@/assets/security-background.jpg";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const CallToAction = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          email,
+          name: email,
+          message: "User requested to be contacted",
+          type: "contact",
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Request Sent",
+        description: "We'll contact you soon!",
+      });
+      setEmail("");
+    } catch (error) {
+      console.error("Error submitting contact:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div 
@@ -32,17 +74,24 @@ const CallToAction = () => {
           </div>
 
           <div className="max-w-md mx-auto mb-8">
-            <div className="flex gap-3">
+            <form onSubmit={handleSubmit} className="flex gap-3">
               <Input 
                 type="email" 
                 placeholder="Enter your email address" 
                 className="flex-1 bg-background border-border"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Contact Us
+              <Button 
+                type="submit"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Contact Us"}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-            </div>
+            </form>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-border">
