@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, ArrowLeft, MessageCircle } from "lucide-react";
+import { Phone, MapPin, ArrowLeft, MessageCircle } from "lucide-react";
 import wechatQR from "@/assets/wechat-qr.png";
 import whatsappQR from "@/assets/whatsapp-qr.png";
 import { Link } from "react-router-dom";
@@ -111,17 +111,6 @@ const Enquiry = () => {
                 <div className="space-y-6">
                   <Card className="p-6">
                     <div className="flex items-start gap-4">
-                      <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold mb-2">Email Us</h3>
-                        <p className="text-sm text-muted-foreground mb-1">info@goldexspimex.ru</p>
-                        <p className="text-sm text-muted-foreground">For verification and inquiries</p>
-                      </div>
-                    </div>
-                  </Card>
-
-                  <Card className="p-6">
-                    <div className="flex items-start gap-4">
                       <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-semibold mb-2">Call Us</h3>
@@ -152,6 +141,7 @@ const Enquiry = () => {
                       <li>• Secure custody with GOZNAK</li>
                       <li>• Transparent exchange-based pricing</li>
                       <li>• Comprehensive trading services</li>
+                      <li>• Complete onboarding services</li>
                     </ul>
                   </Card>
 

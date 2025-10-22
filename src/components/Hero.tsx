@@ -33,15 +33,12 @@ const Hero = () => {
             Experience transparent, secure, and liquid precious metals markets.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base md:text-lg px-6 md:px-8 w-full sm:w-auto" asChild>
+          <div className="flex justify-center px-4">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg md:text-xl px-10 md:px-16 py-6 md:py-8 h-auto w-full sm:w-auto" asChild>
               <a href="/enquiry">
                 Start Trading
-                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+                <ArrowRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
               </a>
-            </Button>
-            <Button size="lg" variant="outline" className="text-base md:text-lg px-6 md:px-8 border-primary/30 hover:bg-primary/10 w-full sm:w-auto">
-              Learn More
             </Button>
           </div>
           
