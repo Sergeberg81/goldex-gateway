@@ -1,4 +1,4 @@
-import goldexLogo from "@/assets/goldex-logo-dark.png";
+import goldexLogo from "@/assets/goldex-logo-gold.png";
 import spimexLogo from "@/assets/spimex-logo.jpg";
 
 const Footer = () => {
